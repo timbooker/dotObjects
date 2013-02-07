@@ -1,0 +1,12 @@
+﻿#set($searchUri = $uri.Parse("$domain.Type/Search/All"))
+#set($searchResponse = $app.ExecuteProcess($searchUri, null))
+<select id="$domain.UniqueID" name="$domain.UniqueID">
+    <option />
+    #foreach($item in $searchResponse.Result)
+        <option value="$item.Value"
+        #if($domain.Value == $item.Instance)
+            selected
+        #end
+        >$item.Instance</option>
+    #end
+</select>

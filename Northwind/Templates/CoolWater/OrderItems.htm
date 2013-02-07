@@ -1,0 +1,128 @@
+﻿<script type="text/javascript">
+    var uid = "$domain.UniqueID";
+
+    function showUnitPrice() {
+        var product = $("#product :selected");
+        var unitPrice = $("#unitPrice");
+        unitPrice.val(product.attr("unitprice"));
+        
+    }
+
+    function addItem() {
+
+        var product = $("#product :selected");
+        var quantity = $("#quantity");
+        var unitPrice = $("#unitPrice");
+        var discount = $("#discount");
+        
+        if (product.val() == "") {
+            alert("$app.GetLocalizationString($domain, "Please select one Product.")");
+            $("#product").focus();
+        }else if(quantity.val() == ""){
+            alert("$app.GetLocalizationString($domain, "Please input the desired quantity.")");
+            $("#product").focus();
+        }else if(parseInt(quantity.val()) > parseInt(product.attr("max"))){
+            alert("$app.GetLocalizationString($domain, "Quantity cannot be greater than ")" + product.attr("max") + ".");
+            $("#product").focus();
+        }else{
+
+            var index = $("#items tbody tr").length;
+            var item = '<tr class="with-border">' +
+                        '<td>' + product.text() + 
+                        '<input type="hidden" name="' + uid + '[' + index + ']" value="" />' +
+                        '<input type="hidden" name="' + uid + '[' + index + ']product" value="' + product.val() + '" />' +
+                        '<input type="hidden" name="' + uid + '[' + index + ']quantity" value="' + quantity.val() + '" />' +
+                        '<input type="hidden" name="' + uid + '[' + index + ']unitPrice" value="' + unitPrice.val() + '" />' +
+                        '<input type="hidden" name="' + uid + '[' + index + ']discount" value="' + discount.val() + '" />' +
+                        '<input type="hidden" name="max" id="max" value="' + product.attr("max") + '" />' +
+                        '<input type="hidden" name="name" id="name" value="' + product.text() + '" />' +
+                        '</td>' +
+                        '<td>' + quantity.val() + '</td>' +
+                        '<td>' + unitPrice.val() + '</td>' +
+                        '<td>' + discount.val() + '</td>' +
+                        '<td></td>' + 
+                        '<td style="text-align:right;"><input type="checkbox" class="checkbox" /></td>' + 
+                       '</tr>';
+
+            var body = $("#items tbody");
+            body.append(item);
+            product.remove();
+            quantity.val("");
+            unitPrice.val("");
+            discount.val("");
+        }
+    }
+
+    function removeItem() {
+        var checkbox = $("#items tbody :checked");
+        var items = checkbox.parent().parent();
+        for (i = 0; i < items.length; i++) {
+            var item = $(items[i]);
+
+            var max = item.find("#max").val();
+            var text = item.find("#name").val();
+            
+            var value = item.find("#" + uid + "_ProductID").val();
+            var unitPrice = item.find("#" + uid + "_UnitPrice").val();
+
+            var option = "<option value='" + value + "' unitprice='" + unitPrice + "' max='" + max + "'>" + text + "</option>";
+            $("#product").append(option);
+            item.remove();
+        }
+    }
+</script>
+<table id="items" class="grid-view-as-field">
+    <thead>
+        <tr class="with-border">
+            <th>
+                <label>$app.GetLocalizationString($domain, "Product")</label>
+            </th>
+            <th>
+                <label>$app.GetLocalizationString($domain, "Quantity")</label>
+            </th>
+            <th>
+                <label>$app.GetLocalizationString($domain, "Unit Price")</label>
+            </th>
+            <th>
+                <label>$app.GetLocalizationString($domain, "Discount")</label>
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+        </tr>
+        <tr class="with-border">
+            <th>
+                #set($searchUri = $uri.Parse("Product/Search/And/Equals/Discontinued/False/GreaterThan/UnitsInStock/0"))
+                #set($searchResponse = $app.ExecuteProcess($searchUri, null))
+                <select id="product" onchange="showUnitPrice();" >
+                    <option unitprice="" />
+                    #foreach($item in $searchResponse.Result)
+                        #if(!$domain.Domains.ContainsValue($item.Value))
+                        <option value="$item.Value" unitprice="$item.Instance.UnitPrice.ToString("0.00")" max="$item.Instance.UnitsInStock">$item.Instance</option>
+                        #end
+                    #end
+                </select>
+            </th>
+            <th>
+                <input type="text" class="textbox align-right" id="quantity" style="width:50px;" />
+            </th>
+            <th>
+                <input type="text" class="textbox align-right" id="unitPrice" style="width:50px;" readonly />
+            </th>
+            <th>
+                <input type="text" class="textbox align-right" id="discount" style="width:50px;" />
+            </th>
+            <th>
+             <input type="button" class="button" value="$app.GetLocalizationString($domain, "Add")" onclick='addItem();' />
+            </th>
+            <th style="vertical-align:middle;">
+                #if($domain.CanWrite)
+                    <input type="button" class="button" value="$app.GetLocalizationString($domain, "Remove Selected")" onclick='removeItem();' />
+                #end
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

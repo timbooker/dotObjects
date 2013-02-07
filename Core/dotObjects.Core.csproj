@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5547CCE9-0D18-4614-8E57-D9CFFD2F87F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>dotObjects.Core</RootNamespace>
+    <AssemblyName>dotObjects.Core</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\dotObjects.Core.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - ERP|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - ERP\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\dotObjects.Core.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'dotObjects|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\dotObjects\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\dotObjects.Core.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'All - Debug|AnyCPU'">
+    <OutputPath>bin\All - Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Services - Release|AnyCPU'">
+    <OutputPath>bin\Services - Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\dotObjects.Core.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Db4objects.Db4o, Version=7.2.39.10644, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Db4objects.Db4o.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\Context.cs" />
+    <Compile Include="Configuration\ContextCollection.cs" />
+    <Compile Include="Configuration\Interceptor.cs" />
+    <Compile Include="Configuration\InterceptorsCollection.cs" />
+    <Compile Include="Configuration\SettingsCollection.cs" />
+    <Compile Include="Configuration\EntityAssembliesCollection.cs" />
+    <Compile Include="Configuration\EntityAssembly.cs" />
+    <Compile Include="Configuration\CoreSection.cs" />
+    <Compile Include="Configuration\Setting.cs" />
+    <Compile Include="Configuration\ExcludedTypeCollection.cs" />
+    <Compile Include="Configuration\ExcludedType.cs" />
+    <Compile Include="IInterceptor.cs" />
+    <Compile Include="Persistence\And.cs" />
+    <Compile Include="Persistence\Between.cs" />
+    <Compile Include="Persistence\ContextAttribute.cs" />
+    <Compile Include="Persistence\ContextFactory.cs" />
+    <Compile Include="Persistence\In.cs" />
+    <Compile Include="Persistence\Db4o\Db4oContext.cs" />
+    <Compile Include="Persistence\LinqToSQL\DynamicClass.cs" />
+    <Compile Include="Persistence\LinqToSQL\DynamicExpression.cs" />
+    <Compile Include="Persistence\LinqToSQL\DynamicOrdering.cs" />
+    <Compile Include="Persistence\LinqToSQL\DynamicProperty.cs" />
+    <Compile Include="Persistence\LinqToSQL\DynamicQueryable.cs" />
+    <Compile Include="Persistence\LinqToSQL\ExpressionParser.cs" />
+    <Compile Include="Persistence\LinqToSQL\ParseException.cs" />
+    <Compile Include="Persistence\LinqToSQL\Res.cs" />
+    <Compile Include="Persistence\LinqToSQL\Signature.cs" />
+    <Compile Include="Persistence\NotEquals.cs" />
+    <Compile Include="Persistence\IsNotNull.cs" />
+    <Compile Include="Persistence\GreaterThanOrEqual.cs" />
+    <Compile Include="Persistence\Context.cs" />
+    <Compile Include="Persistence\Contains.cs" />
+    <Compile Include="Persistence\GreaterThan.cs" />
+    <Compile Include="Persistence\IsNull.cs" />
+    <Compile Include="Persistence\LessThan.cs" />
+    <Compile Include="Persistence\LessThanOrEqual.cs" />
+    <Compile Include="Persistence\LinqToSQL\ClassFactory.cs" />
+    <Compile Include="Persistence\LinqToSQL\LinqToSqlContext.cs" />
+    <Compile Include="Persistence\Or.cs" />
+    <Compile Include="Persistence\OrderBy.cs" />
+    <Compile Include="Persistence\OrderByDirection.cs" />
+    <Compile Include="Persistence\Query.cs" />
+    <Compile Include="Persistence\Equals.cs" />
+    <Compile Include="Persistence\Criteria.cs" />
+    <Compile Include="Persistence\Where.cs" />
+    <Compile Include="Processing\Arguments\EmptyArgument.cs" />
+    <Compile Include="Processing\Arguments\ExecutionArgument.cs" />
+    <Compile Include="Processing\Arguments\IdentifiedArgument.cs" />
+    <Compile Include="Processing\Arguments\IndexedArgument.cs" />
+    <Compile Include="Processing\Arguments\ProcessArgument.cs" />
+    <Compile Include="Processing\Arguments\QueryArgument.cs" />
+    <Compile Include="Processing\Arguments\SessionArgument.cs" />
+    <Compile Include="Processing\ExpressionTripletNode.cs" />
+    <Compile Include="Processing\ExpressionSingleNode.cs" />
+    <Compile Include="Processing\IProcessResponse.cs" />
+    <Compile Include="Processing\Process.cs" />
+    <Compile Include="Processing\ProcessBehavior.cs" />
+    <Compile Include="Processing\ProcessState.cs" />
+    <Compile Include="Processing\Triggers\AfterAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\NonSerializableAttribute.cs" />
+    <Compile Include="Processing\Expression.cs" />
+    <Compile Include="UI\DomainExtensions.cs" />
+    <Compile Include="UI\FormatAttribute.cs" />
+    <Compile Include="UI\Formulas\Formula.cs" />
+    <Compile Include="UI\Formulas\FormulaParser.cs" />
+    <Compile Include="UI\Formulas\IIF.cs" />
+    <Compile Include="UI\Formulas\IsNull.cs" />
+    <Compile Include="UI\IDomainFilter.cs" />
+    <Compile Include="UI\NonInteractiveAttribute.cs" />
+    <Compile Include="UI\DependencyAttribute.cs" />
+    <Compile Include="UI\FileDomain.cs" />
+    <Compile Include="UI\ImageDomain.cs" />
+    <Compile Include="UI\Domain.cs" />
+    <Compile Include="UI\DomainCollection.cs" />
+    <Compile Include="UI\NonQueryableAttribute.cs" />
+    <Compile Include="UI\FieldDomain.cs" />
+    <Compile Include="UI\NonVisibleAttribute.cs" />
+    <Compile Include="Processing\ProcessURI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configuration\dotObjects-1.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Session\dotObjects.Session.csproj">
+      <Project>{4F905EA1-2F2D-4C05-B38F-A0B44CA69C51}</Project>
+      <Name>dotObjects.Session</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

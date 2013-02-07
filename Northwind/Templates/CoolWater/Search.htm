@@ -1,0 +1,89 @@
+﻿#if($response.Result.Count > 0)
+    #set($firstDomain = $response.Result.get_Item(0))
+    <h1>
+        $app.GetLocalizationString($firstDomain, $firstDomain.Title)
+    </h1>
+    &nbsp;
+    <h3>$app.GetLocalizationString($firstDomain, "Search")</h3> 
+    <div class="content-container">
+        <table class="with-border grid-view">
+            <thead>
+               <tr>
+                #foreach($header in $firstDomain.Domains)
+                    #if($header.CanRead)
+                        <th>
+                            <strong>
+                                $header.Label
+                            </strong>
+                        </th>
+                    #end
+                #end
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            #foreach($domain in $response.Result)
+              <tr >
+                
+                #set($count = $domain.Domains.Count)
+                #foreach($domain in $domain.Domains)
+                    #if(!$domain.CanRead)
+                        #set($count = $count - 1)
+                    #end
+                #end
+                #set($width = 100/$count)
+                
+                #foreach($field in $domain.Domains)
+                    #if($field.CanRead)
+                        <td style="width:$width%" class="with-border">
+                            $renderer.ProcessDomain($response, $field)
+                        </td>
+                    #end
+                #end
+                
+                <td class="action with-border">
+                  <input type="button" class="button" 
+                         value='$app.GetLocalizationString($domain, "View")'
+                         onclick='document.location.href = "$url.GetViewUrl($uri.Parse("$domain.URI.Model/View/$domain.Value"))"; ' />
+                  
+                </td>
+                <td class="action with-border">
+                  <input type="button" class="button"
+                         value='$app.GetLocalizationString($domain, "Edit")'
+                         onclick='document.location.href = "$url.GetViewUrl($uri.Parse("$domain.URI.Model/Edit/$domain.Value"))"; ' />
+                </td>
+                <td class="action with-border">
+                    <input type="button" class="button"
+                         value='$app.GetLocalizationString($domain, "Delete")'
+                         onclick='if(confirm("Delete $domain.Instance?")){ document.location.href = "$url.GetViewUrl($uri.Parse("$domain.URI.Model/Delete/$domain.Value"))"; }' />
+                </td>
+              </tr>
+            #end
+            </tbody>
+            <tfoot>
+              <tr>
+                #set($first = $response.Result.get_Item(0))
+                #set($colspan = $first.Domains.Count+3)
+                
+                <td class="with-border" colspan="$colspan">
+                  #set($model = $app.Schema.FindModel($first.Type))
+                  
+                  #foreach($ctor in $model.Constructors)
+                    <input type="button" class="button"
+                         value="$ctor.Label"
+                         onclick='document.location.href = "$url.GetViewUrl($ctor.URI)";' />
+                  #end
+                  
+                  #foreach($static in $model.StaticMethods)
+                  <input type="button" class="button"
+                       value="$static.Label"
+                       onclick='document.location.href = "$url.GetViewUrl($static.URI)";' />
+                  #end
+                </td>
+              </tr>
+            </tfoot>
+        </table>
+    </div>
+#end

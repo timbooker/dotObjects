@@ -1,0 +1,18 @@
+﻿#if($response.Message)
+    <h1>
+        <a href='$urlHelper.GetViewUrl($uri.Parse("$appHelper.GetTypeName($response.ModelType)/Search/All"))'>
+            $appHelper.GetLocalizationString($response.ModelType, $response.ModelType.Name)
+        </a>
+    </h1>
+    <div class="content-container">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                         $response.Message
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+#end

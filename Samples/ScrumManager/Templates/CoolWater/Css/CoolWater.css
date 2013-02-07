@@ -1,0 +1,648 @@
+/* top elements */
+*, html
+{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+body
+{
+    background: #caced1;
+    font: 70%/1.5em Verdana, Tahoma, arial, sans-serif;
+    color: #777;
+    text-align: center;
+    margin: 0;
+    
+    
+    background: url(../Images/box.jpg) repeat-x;
+}
+
+/* links */
+a, a:visited
+{
+    text-decoration: none;
+    background: inherit;
+    color: #FB9233;
+}
+a:hover
+{
+    text-decoration: underline;
+    background: inherit;
+    color: #93C600;
+}
+
+/* headers */
+h1, h2, h3
+{
+    display:inline;
+    font-family: 'Trebuchet MS' , Tahoma, Sans-serif;
+}
+h1
+{
+    font-size: 180%;
+    font-weight: bold;
+    color: #555;
+    text-decoration:none;
+}
+
+h1 a, h1 a:visited, h1 a:hover 
+{
+	color: #555;
+    text-decoration:none;
+}
+
+h2
+{
+	font-size: 160%;
+    color: #88ac0b;
+    font-weight: normal;
+}
+h3
+{
+    font-size: 160%;
+    color: #666666;
+    text-align:left;
+    float:right;
+    margin-right:15px;
+    margin-top:5px;
+    
+}
+
+/* images */
+img
+{
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    padding: 5px;
+}
+img.float-right
+{
+    margin: 5px 0px 10px 10px;
+}
+img.float-left
+{
+    margin: 5px 10px 10px 0px;
+}
+
+h1, h2, h3, p
+{
+    margin-left:15px;
+    padding: 0;
+}
+ul, ol
+{
+    margin: 5px 15px;
+    padding: 0 25px;
+}
+
+hr
+{
+    border: solid 1px #2666C3;
+    margin: 10px 0;
+}
+
+code
+{
+    margin: 5px 0;
+    padding: 15px;
+    text-align: left;
+    display: block;
+    overflow: auto;
+    font: 500 1em/1.5em 'Lucida Console' , 'courier new' , monospace; /* white-space: pre; */
+    border: 1px solid #E5F0FB;
+    background: #F4F8FD;
+}
+acronym
+{
+    cursor: help;
+    border-bottom: 1px dotted #777;
+}
+blockquote
+{
+    margin: 10px 15px;
+    padding: 0 0 0 25px;
+    font: bold 1.3em/1.5em "Trebuchet MS" , Tahoma, arial, Sans-serif;
+    color: #2361BA;
+    border: 1px solid #E5F0FB;
+    background: #F4F8FD url(../Images/quote.jpg) no-repeat 8px 6px;
+}
+
+/* start - table */
+table
+{
+    border-collapse: collapse;
+    width:auto;
+}
+
+table.with-border, tr.with-border
+{
+    border: 1px solid #306bc1;
+}
+
+th strong
+{
+    color: #fff;
+}
+
+th
+{
+    background: #306bc1 url(../Images/button-bg.jpg) repeat-x 0 0;
+    height: 35px;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: #fff;
+    text-align: left;
+    border-bottom-width: 2px;
+}
+
+tr
+{
+    height: 30px;
+}
+
+td
+{
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+td.field
+{
+    width:100%;
+    text-align:left;
+    white-space:nowrap;
+    padding-bottom:20px;
+}
+
+td.label
+{
+    padding-top:6px;
+    vertical-align:top;
+    text-align:left;
+    white-space:nowrap;
+}
+
+td.input
+{
+    width:1%;
+}
+
+tfoot td
+{
+    text-align:left;
+}
+/* end - table */
+
+
+/* message */
+
+div.message-failure
+{
+    border: solid 1px #FF0000;
+    background-color: #fff;
+    color: #FF0000;
+    font-weight: bold;
+    padding:10px;
+    margin:5px 0px;
+}
+
+div.message-success
+{
+    border: 1px solid #009900;
+    background-color: #fff;
+    color: #009900;
+    font-weight: bold;
+    padding: 10px;
+    margin: 5px 0px;
+}
+
+.message-success .button,
+.message-failure .button
+{
+	display: block;
+	float: right;
+}
+
+/* end - message */
+
+/* form elements */
+form
+{
+    padding: 10px 0;
+    border: 1px solid #E5F0FB;
+    background: #F4F8FD;
+    
+}
+fieldset
+{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+legend
+{
+    display: none;
+}
+label
+{
+    font-weight: bold;
+    margin: 7px 0;
+}
+input
+{
+    border: 1px solid #306bc1;
+    font: normal 1em Verdana, sans-serif;
+    color: #777;
+}
+
+select,
+textarea
+{
+    padding: 3px;
+    font: normal 1em Verdana, sans-serif;
+    border: 1px solid #306bc1;
+    color: #777;
+}
+textarea
+{
+    width: 400px;
+    height: 100px;
+    display: block;
+}
+textarea,
+input.textbox,
+input.textbox_valuetype,
+input.textbox_currency,
+input.textbox_date
+{
+    padding:3px 0;
+    width:398px;
+}
+input.textbox_valuetype,
+input.textbox_currency
+{
+    width:100px;
+}
+
+input.textbox_currency
+{
+    text-align:right;
+}
+
+input.textbox_date
+{
+    width:70px;
+}
+
+input.button
+{
+    font: bold 11px Arial, Sans-serif;
+    height: 20px;
+    margin: 0;
+    padding: 2px 3px;
+    color: #fff;
+    background: #306bc1 url(../Images/menu.jpg) repeat-x;
+    background-position: center center;
+    border-width:0px;
+}
+
+input.checkbox
+{
+    border-width:0px;
+}
+
+/* search form */
+.searchform
+{
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 5px 0 5px 0;
+    width: 180px;
+}
+.searchform p
+{
+    margin: 0;
+    padding: 0;
+}
+.searchform input.textbox
+{
+    width: 110px;
+    color: #777;
+    height: 20px;
+    padding: 2px;
+    border: 1px solid #D2E8F7;
+    vertical-align: top;
+}
+.searchform input.button
+{
+    width: 55px;
+    height: 26px;
+    padding: 2px 5px;
+    vertical-align: top;
+}
+
+/********************************************
+   LAYOUT
+********************************************/
+#wrap
+{
+    width: 100%;
+    margin: 0;
+    text-align: left;
+}
+#content-wrap
+{
+    clear: both;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.content-container
+{
+    margin: 10px 15px;
+    padding: 10px 10px;
+    border: 1px solid #E5F0FB;
+    background: #fff;
+    width:auto;
+}
+
+#header
+{
+    position: relative;
+    height: 71px;
+    background: #caced1 url(../Images/button-bg.jpg) repeat-x left top;
+    padding: 0;
+    color: #fff;
+}
+#header h1#logo-text
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    font: bolder 26px 'Trebuchet MS' , Arial, Sans-serif;
+    letter-spacing: -2px;
+    color: #fff;
+    text-transform: none;
+    text-decoration: none;
+    background: transparent; /* change the values of top and left to adjust the position of the logo*/
+    top: 18px;
+    left: 35px;
+}
+#header p#slogan
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    font: bold 13px 'Trebuchet MS' , Arial, Sans-serif;
+    text-transform: none;
+    color: #FFF; /* change the values of top and left to adjust the position of the slogan*/
+    top: 80px;
+    left: 50px;
+}
+
+/* header links */
+#header #header-links
+{
+    position: absolute;
+    color: #C6DDEE;
+    font: bold 14px "Trebuchet MS" , Arial, Tahoma, Sans-serif;
+    top: 20px;
+    right: 20px;
+}
+#header #header-links a
+{
+    color: #fff;
+    text-decoration: none;
+}
+#header #header-links a:hover
+{
+    color: #D4FF55;
+}
+
+/* navigation */
+.sf-menu, .sf-menu * {
+	margin:	0;
+	padding: 0;
+	list-style:	none;
+}
+.sf-menu {
+	line-height: 1.0;
+	float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+.sf-menu ul {
+	position: absolute;
+	top: -999em;
+	width: 10em; /* left offset of submenus need to match (see below) */
+}
+.sf-menu ul li {
+	width: 100%;
+}
+.sf-menu li:hover {
+	visibility: inherit; /* fixes IE7 'sticky bug' */
+	border-left: solid 1px #85CC28;
+	border-right: solid 1px #85CC28;
+}
+
+.sf-menu li {
+	float: left;
+	position: relative;
+	z-index: 99;
+	border-left:solid 1px Transparent;
+	border-right:solid 1px Transparent;
+}
+.sf-menu a {
+	display: block;
+}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+	left: -1px;
+	top: 2.5em;
+}
+.sf-menu li:hover li ul,
+.sf-menu li.sfHover li ul {
+	top: -999em;
+}
+.sf-menu li li:hover ul,
+.sf-menu li li.sfHover ul {
+	left: 10em; /* match ul width */
+	top: 0;
+}
+
+/*** DEMO SKIN ***/
+.sf-menu {
+	float: left;
+	margin-bottom: 1.2em;
+}
+
+.sf-menu ul
+{
+    margin-top:-1px;
+}
+
+.sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+	color: #006699;
+	padding: .65em 1em;
+	color: #fff;
+    text-decoration: none;
+}
+.sf-menu li {
+	
+}
+.sf-menu li li {
+	border: 1px solid #85CC28;
+	border-top-width:0px;
+	background-color:#fff;
+}
+.sf-menu li li a, .sf-menu li li a:visited
+{
+    color: #306bc1;
+}
+
+.sf-menu li li ul {
+	border-top: 1px solid #85CC28;
+}
+.sf-menu li:hover, .sf-menu li.sfHover, .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active
+{
+    
+}
+
+#menu
+{
+    clear: both;
+    margin: 0 auto;
+    padding: 0;
+    
+    background: #81C524 url(../Images/menu.jpg) repeat-x;
+    font: bold 16px/40px "trebuchet MS" , Arial, Tahoma, Sans-serif;
+    height: 40px;
+    width: 100%;
+}
+
+/* Main Column */
+#main
+{
+    text-align: left;
+    width:auto;
+    margin: 0;
+    padding: 0;
+    display:block;
+}
+#main h2
+{
+    font: normal 180% 'Trebuchet MS' , Tahoma, Arial, Sans-serif;
+    padding: 0;
+    margin-bottom: 0;
+    color: #2666c3;
+}
+#main h2 a
+{
+    color: #2666c3;
+    text-decoration: none;
+}
+
+#main p, #main h1, #main h2, 
+#main h3, #main ol, #main ul, 
+#main blockquote, #main table, #main div
+{
+    
+}
+#main ul li
+{
+    list-style-image: url(../Images/bullet.gif);
+}
+
+/* Footer */
+#footer
+{
+    color: #C6DDEE;
+    background: #caced1 url(../Images/footer.jpg) no-repeat center top;
+    clear: both;
+    width: 790px;
+    height: 57px;
+    text-align: center;
+    font-size: 90%;
+}
+#footer p
+{
+    padding: 10px 0;
+    margin: 0;
+}
+#footer a
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* alignment classes */
+.float-left
+{
+    float: left;
+}
+.float-right
+{
+    float: right;
+}
+.align-left
+{
+    text-align: left;
+}
+.align-right
+{
+    text-align: right;
+}
+
+/* display and additional classes */
+.clear
+{
+    clear: both;
+}
+
+
+/* sortable table - grid-view */
+
+.grid-view .header
+{
+    cursor:pointer;
+}
+
+.grid-view .headerSortUp
+{
+    
+}
+
+.grid-view .headerSortDown
+{
+    
+}
+
+#main .grid-view-as-field,
+.grid-view-as-field,
+.grid-view-as-field td
+{
+    width:398px;
+    
+}
+
+#main .grid-view-as-field,
+.grid-view-as-field
+{
+	background-color:White;
+    margin-left:1px;
+    margin-right:0px;
+    
+}
+
+.grid-view-as-field td 
+{
+	white-space:pre-wrap;
+	padding-top:3px;
+	padding-bottom:3px;
+}
+
+/* end - sortable table - grid-view */

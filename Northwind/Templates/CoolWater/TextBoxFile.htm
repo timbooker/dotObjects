@@ -1,0 +1,5 @@
+﻿#if($domain.HasValue && $domain.Type.FullName == "System.Drawing.Image")
+    <img id="$domain.UniqueID" name="$domain.UniqueID" src='$url.GetImageUrl($domain)' />
+    <br />
+#end
+<input type="file" class="textbox" id="$domain.UniqueID" name="$domain.UniqueID" />

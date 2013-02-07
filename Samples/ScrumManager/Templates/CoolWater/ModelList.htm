@@ -1,0 +1,82 @@
+﻿#set($uid = $domain.UniqueID)   ## the domain unique id
+
+<table id="added$uid" class="grid-view-as-field">
+    #if($domain.CanWrite)
+        <thead>
+            <tr class="with-border">
+                <th colspan="2" style="text-align:right">
+                    <input type="button" class="button" value="Add"
+                        onclick='LoadListSelection("$domain.Type", "$uid");$(this).parents("table").find(":checkbox").attr("checked", false);' />
+                    <input type="button" class="button" value="Remove Selected"
+                        onclick='RemoveListSelection("$uid");$(this).parents("table").find(":checkbox").attr("checked", false);' />
+                    <input type="checkbox" class="checkbox" style="margin-left:10px;" onclick='$(this).parents("table").find(":checkbox").attr("checked", this.checked);' />                
+                </th>
+            </tr>
+        </thead>
+    #end
+    <tbody>
+        #if($domain.Domains.Count > 0)
+            #foreach($child in $domain.Domains)
+                #if($child.Instance)
+                     <tr class="with-border">
+                        <td>$child.Instance</td>
+                        <td style="width:1%;">
+                            #if($domain.CanWrite)
+                                <input type="hidden" name="$domain.UniqueID" value="$child.Value" />
+                                <input type="checkbox" class="checkbox" />
+                            #end
+                        </td>
+                     </tr>
+                #end
+            #end
+        #end
+    </tbody>
+</table>
+
+#if($domain.CanWrite)
+    #set($current = $appHelper.CreateDomain($domain.Type, $domain.URI))
+    <div id="new$uid" style="display:none;" >
+        <div class="content-container">
+            <h3>$domain.Label</h3>
+            <table>
+                <tbody>
+                #foreach($child in $current.Domains)
+                    <tr>
+                        <td class="label">
+                            $child.Label
+                        </td>
+                        <td class="field">
+                            $renderer.ProcessDomain($response, $child)
+                        </td>
+                    </tr>
+                #end
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">
+                            <hr />
+                            $stateHelper.Register($current, "state$uid")
+                            <input type="button" class="button" value="Save" onclick='SaveListNew("$current.Type", this, "$uid", "$stateHelper.FieldName");' />
+                            <input type="button" class="button modalClose" value="Cancel" />
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div id="sel$uid" style="display:none;" >
+        <table class="grid-view-as-field">
+            <thead>
+                <tr class="with-border">
+                    <th><strong>$domain.Label</strong></th>
+                    <th><input type="checkbox" class="checkbox" onclick='$(this).parents("table").find(":checkbox").attr("checked", this.checked);' /></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+#end

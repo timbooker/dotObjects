@@ -1,0 +1,41 @@
+﻿<!-- Title -->
+<h1>
+    <a href='$url.GetViewUrl($uri.Parse("$app.GetTypeName($response.Domain.Type)/Search/All"))'>
+        $app.GetLocalizationString($response.Domain, $response.Title)
+    </a>
+</h1>
+<h3>$response.Domain.Label</h3> 
+#if($response.Message)
+    #parse("Message.htm")
+#end
+<div class="content-container">
+    <form method="POST" enctype="multipart/form-data" action="$url.CurrentUrl">
+        $state.Register($response.Domain)
+        <table>
+            <tbody>
+                #foreach($field in $response.Domain.Domains)
+                    #if($field.CanRead)
+                        <tr>
+                            <td class="label">
+                                <label for="$field.UniqueID">$field.Label</label>
+                            </td>
+                            <td class="field">
+                                $renderer.ProcessDomain($response, $field)
+                            </td>
+                        </tr>
+                    #end
+                #end
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <hr />
+                        <input type="submit" class="button" value="$response.Domain.Label" />
+                        <input type="button" class="button" value='$app.GetLocalizationString($response.Domain, "Back")' onclick='history.go(-1);' />
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>

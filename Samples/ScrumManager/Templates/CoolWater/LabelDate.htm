@@ -1,0 +1,5 @@
+﻿#if(!$appHelper.IsModel($domain.Type))
+    #if($domain.HasValue)
+        $domain.Value.ToString("dd/MM/yyyy")
+    #end
+#end

@@ -1,0 +1,5 @@
+﻿<textarea class="textarea" id="$domain.UniqueID" name="$domain.UniqueID"
+ #if(!$domain.CanWrite)
+        readonly
+    #end
+>#if($domain.HasValue)$domain.Value#end</textarea>

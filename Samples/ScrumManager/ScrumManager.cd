@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="dotObjects.Samples.ScrumManager.Impediment">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAgAEAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Impediment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dotObjects.Samples.ScrumManager.Member">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAgAAkAQAAAAUAAAAEAAACAAAAAgAAAAA=</HashCode>
+      <FileName>Member.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dotObjects.Samples.ScrumManager.Sprint">
+    <Position X="10.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIIAAACCACAAAAAgAAAAAAQAAAAEAAAAAAAgAAAAIAA=</HashCode>
+      <FileName>Sprint.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Stories" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="dotObjects.Samples.ScrumManager.Task">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQEEIAESAAAAEgAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Task.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Status" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Impediments" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="dotObjects.Samples.ScrumManager.Planning.BacklogItem">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgQAAAAEAAAAAAAAAAAAAAgAAAAIAAAAAAA=</HashCode>
+      <FileName>Planning\BacklogItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Tasks" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="dotObjects.Samples.ScrumManager.Planning.Product">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEIAAAAgIAgAAiEIAAIAAQAAAAEAAQAAAAEAAAACAA=</HashCode>
+      <FileName>Planning\Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Master" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Sprints" />
+      <Property Name="Members" />
+      <Property Name="Backlog" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Enum Name="dotObjects.Samples.ScrumManager.TaskStatus">
+    <Position X="3.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>TaskStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

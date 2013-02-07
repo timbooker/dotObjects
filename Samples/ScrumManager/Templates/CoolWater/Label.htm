@@ -1,0 +1,8 @@
+﻿#if(!$appHelper.IsModel($domain.Type))
+    #if($domain.HasValue)
+        $domain.Value
+    #end
+    
+#elseif($domain.Instance)
+    $domain.Instance
+#end

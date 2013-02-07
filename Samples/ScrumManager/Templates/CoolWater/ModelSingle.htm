@@ -1,0 +1,41 @@
+﻿#set($uid = $domain.UniqueID)   ## the domain unique id
+#set($cid = "container$uid")    ## the container id 
+
+<span id="$cid">
+    <input type="hidden" id="val$uid" name="$domain.UniqueID" 
+        #if($domain.HasValue)
+            value="$domain.Value"
+        #end    
+    />
+    #if($domain.CanWrite)
+    <input type="text" class="textbox" id="$uid" readonly
+        #if($domain.HasValue)
+            value="$domain.Instance"
+        #end
+    />
+    #elseif($domain.HasValue)
+        $domain.Instance
+    #end
+    #if($domain.CanWrite)
+        <input type="button" class="button" value="Select" 
+            onclick='LoadSingleSelection("$domain.Type","$uid");' /> 
+            
+        <input type="button" class="button" value="Clear"
+            onclick='ClearSingleValue("$uid");' />
+        
+        <div id="sel$uid" style="display:none;">
+            <table class="grid-view-as-field">
+                <thead>
+                    <tr class="with-border">
+                        <th><strong>$domain.Label</strong></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+        </div>
+    #end
+</span>

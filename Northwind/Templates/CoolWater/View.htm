@@ -1,0 +1,45 @@
+﻿<h1>
+    <a href='$url.GetViewUrl($uri.Parse("$app.GetTypeName($response.Domain.Type)/Search/All"))'>
+        $app.GetLocalizationString($response.Domain, $response.Domain.Title)
+    </a>
+</h1>
+<h3>$response.Domain.Label</h3>
+  <div class="content-container">
+    <table>
+      <tbody>
+        #foreach($field in $response.Domain.Domains)
+            #if($field.CanRead)
+                <tr>
+                  <td class="label">
+                    <label for="$field.UniqueID">$field.Label</label>
+                  </td>
+                  <td class="field">
+                    $renderer.ProcessDomain($response, $field)
+                  </td>
+                </tr>
+            #end
+        #end
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">
+            <hr />
+            #if($app.IsModel($response.Domain.Type))
+                <input type="button" class="button" value="$app.GetLocalizationString($response.Domain, "Edit")"
+                    onclick='document.location.href = "$url.GetViewUrl($uri.Parse("$response.Domain.URI.Model/Edit/$response.Domain.Value"))"; ' />
+            
+                <input type="button" class="button"
+                             value='$app.GetLocalizationString($response.Domain, "Delete")'
+                             onclick='if(confirm("Delete $response.Domain.Instance?")){ document.location.href = "$url.GetViewUrl($uri.Parse("$response.Domain.URI.Model/Delete/$response.Domain.Value"))"; }' />
+                
+                #foreach($method in $app.GetModelSchema($response.Domain).InstanceMethods)
+                  <input type="button" class="button" value="$method.Label"
+                      onclick='document.location.href = "$url.GetViewUrl($method.URI)"; ' />
+                #end
+            #end
+            <input type="button" class="button" value="$app.GetLocalizationString($response.Domain, "Back")" onclick='history.go(-1);' />
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>

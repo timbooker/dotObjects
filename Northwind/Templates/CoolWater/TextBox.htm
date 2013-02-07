@@ -1,0 +1,9 @@
+﻿<input type="text" class="textbox" name="$domain.UniqueID" 
+    #if($domain.HasValue)
+      value="$domain.Value"
+    #end
+    
+    #if(!$domain.CanWrite)
+        readonly
+    #end
+/>

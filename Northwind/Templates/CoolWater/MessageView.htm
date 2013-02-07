@@ -1,0 +1,34 @@
+﻿<!-- Title -->
+<h1>
+    <a href='$url.GetViewUrl($uri.Parse("$app.GetTypeName($response.ModelType)/Search/All"))'>
+        $app.GetLocalizationString($response.ModelType)
+    </a>
+</h1>
+#if($response.Message)
+    <div class="content-container" >
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                         $response.Message
+                    </td>
+                </tr>
+            </tbody>
+             <tfoot>
+        <tr>
+          <td colspan="2">
+            #if($response.ModelType.IsVisible)
+                #if($response.MessageType == "Success")
+                    <input type="button" class="button" value="$app.GetLocalizationString($response.ModelType, "Search")" onclick='document.location.href = "$url.GetViewUrl($uri.Parse("$app.GetTypeName($response.ModelType)/Search/All"))";' />
+                #else
+                    <input type="button" class="button" value="$app.GetLocalizationString($response.ModelType, "Back")" onclick='history.go(-1);' />
+                #end
+            #else
+                <input type="button" class="button" value="$app.GetLocalizationString($response.ModelType, "Home")" onclick='document.location.href = "/";' />
+            #end
+          </td>
+        </tr>
+      </tfoot>
+        </table>
+    </div>
+#end

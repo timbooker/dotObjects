@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>$app.ApplicationName</title>
+    <link rel="Stylesheet" href='$url.GetAbsolutePath("#/Css/CoolWater.css")' />
+    <link rel="Stylesheet" href='$url.GetAbsolutePath("#/Css/NyroModal.css")' />
+    <link rel="Stylesheet" href='$url.GetAbsolutePath("#/Css/DatePicker.css")' />
+    
+    $ajax.RegisterScripts()
+    
+    <script src='$url.GetAbsolutePath("#/JavaScript/jquery_mask.js")'></script>
+    <script src='$url.GetAbsolutePath("#/JavaScript/jquery_ui_datepicker.js")'></script>
+    
+    <script src='$url.GetAbsolutePath("#/JavaScript/jquery_nyro_modal.js")'></script>
+    <script src='$url.GetAbsolutePath("#/JavaScript/jquery_superfish.js")'></script>
+    <script src='$url.GetAbsolutePath("#/JavaScript/fields.js")'></script>
+    
+    <script type="text/javascript">
+        $(document).ready(
+	        function()
+	        {
+	            jQuery.datepicker.setDefaults(jQuery.datepicker.regional['pt-BR']);
+	            $("div#menu ul").superfish(); 
+	            $(".textbox_date").datepicker();
+	        }
+	    );
+	</script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+		    <h1 id="logo-text">$app.ApplicationName</h1>
+		    <div id="header-links">
+			    <p>
+			    <a href="$url.GetAbsolutePath("/")">Home</a> | 
+                <a href="$url.GetAbsolutePath("/")">Ajuda</a> | 
+			    #if($security.IsAuthenticated)
+                <a href="$url.GetViewUrl($security.LogoutURI)">Logout</a>
+                #else
+                <a href="$url.GetViewUrl($security.LoginURI)">Login</a>
+                #end
+                </p>
+		    </div>			
+	    </div>
+	    <div id="menu" >
+	        <ul class="sf-menu">
+               #macro (showModel $model)
+                    #if($model.Visible)
+                        <li>
+                            <a href="$url.GetViewUrl($model.ShowAll.URI)">$model.Label</a>
+                            <ul>
+                                #foreach($ctor in $model.Constructors)
+                                    <li>
+                                        <a href="$url.GetViewUrl($ctor.URI)">$ctor.Label</a>
+                                    </li>
+                                #end
+                                #foreach($static in $model.StaticMethods)
+                                   <li>
+                                        <a href="$url.GetViewUrl($static.URI)">$static.Label</a>
+                                    </li>
+                                #end
+                            </ul>
+                        </li>
+                    #end
+                #end
+                #macro (showNamespace $ns)
+                    #if($ns.Visible)
+                        <li>
+                            <a href="javascript:;">$ns.Label</a>
+                            <ul>
+                                #foreach($child in $ns.Namespaces)
+                                    #showNamespace($child)
+                                #end
+                                #foreach($model in $ns.Models)
+                                    #showModel($model)
+                                #end
+                            </ul>
+                        </li>
+                    #end
+                #end
+                
+                #foreach($root in $app.Schema.Namespaces)
+                    #if($root.Namespaces.Count > 0)
+                        #foreach($ns in $root.Namespaces)
+                            #showNamespace($ns)
+                        #end
+                    #end
+                    #foreach($model in $root.Models)
+                        #showModel($model)
+                    #end
+                #end 
+            </ul>
+        </div>
+    </div>
+    <div id="content-wrap">
+        <div id="main">
+            $renderer.ProcessResponse($response)
+        <div id="main">
+    </div>
+</body>
+</html>

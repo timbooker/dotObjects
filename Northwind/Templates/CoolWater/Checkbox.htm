@@ -1,0 +1,9 @@
+﻿<input type="checkbox" name="$domain.UniqueID" value="true"
+    #if($domain.HasValue && $domain.HasValue == true)
+      checked
+    #end
+    
+    #if(!$domain.CanWrite)
+        readonly
+    #end
+/>

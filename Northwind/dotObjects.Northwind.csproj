@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D429798E-6784-40FB-8F56-956B5136004A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>dotObjects.Northwind</RootNamespace>
+    <AssemblyName>dotObjects.Northwind</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Templates\CoolWater\Checkbox.htm" />
+    <Content Include="Templates\CoolWater\CheckboxReadOnly.htm" />
+    <Content Include="Templates\CoolWater\OrderItems.htm" />
+    <Content Include="Templates\CoolWater\ExistingItems.htm" />
+    <Content Include="Templates\CoolWater\JavaScript\fields.js" />
+    <Content Include="Templates\CoolWater\MessageView.htm" />
+    <Content Include="Templates\CoolWater\Css\CoolWater.css" />
+    <Content Include="Templates\CoolWater\Css\DatePicker.css" />
+    <Content Include="Templates\CoolWater\Css\NyroModal.css" />
+    <Content Include="Templates\CoolWater\DropDownList.htm" />
+    <Content Include="Templates\CoolWater\Image.htm" />
+    <Content Include="Templates\CoolWater\Images\222222_7x7_arrow_left.gif" />
+    <Content Include="Templates\CoolWater\Images\222222_7x7_arrow_right.gif" />
+    <Content Include="Templates\CoolWater\Images\454545_7x7_arrow_left.gif" />
+    <Content Include="Templates\CoolWater\Images\454545_7x7_arrow_right.gif" />
+    <Content Include="Templates\CoolWater\Images\888888_7x7_arrow_left.gif" />
+    <Content Include="Templates\CoolWater\Images\888888_7x7_arrow_right.gif" />
+    <Content Include="Templates\CoolWater\Images\ajaxLoader.gif" />
+    <Content Include="Templates\CoolWater\Images\background.jpg" />
+    <Content Include="Templates\CoolWater\Images\box.jpg" />
+    <Content Include="Templates\CoolWater\Images\bullet.gif" />
+    <Content Include="Templates\CoolWater\Images\button-bg.jpg" />
+    <Content Include="Templates\CoolWater\Images\close.gif" />
+    <Content Include="Templates\CoolWater\Images\content.jpg" />
+    <Content Include="Templates\CoolWater\Images\dadada_40x100_textures_02_glass_75.png" />
+    <Content Include="Templates\CoolWater\Images\e6e6e6_40x100_textures_02_glass_75.png" />
+    <Content Include="Templates\CoolWater\Images\ffffff_40x100_textures_02_glass_65.png" />
+    <Content Include="Templates\CoolWater\Images\footer.jpg" />
+    <Content Include="Templates\CoolWater\Images\header.jpg" />
+    <Content Include="Templates\CoolWater\Images\menu.jpg" />
+    <Content Include="Templates\CoolWater\Images\next.gif" />
+    <Content Include="Templates\CoolWater\Images\prev.gif" />
+    <Content Include="Templates\CoolWater\Images\quote.jpg" />
+    <Content Include="Templates\CoolWater\Images\sep.jpg" />
+    <Content Include="Templates\CoolWater\Input.htm" />
+    <Content Include="Templates\CoolWater\JavaScript\CoolWater.js" />
+    <Content Include="Templates\CoolWater\JavaScript\i18n\ui.datepicker-pt-BR.js" />
+    <Content Include="Templates\CoolWater\JavaScript\jquery.js" />
+    <Content Include="Templates\CoolWater\JavaScript\jquery_mask.js" />
+    <Content Include="Templates\CoolWater\JavaScript\jquery_nyro_modal.js" />
+    <Content Include="Templates\CoolWater\JavaScript\jquery_superfish.js" />
+    <Content Include="Templates\CoolWater\JavaScript\jquery_tablesorter.js" />
+    <Content Include="Templates\CoolWater\JavaScript\jquery_ui_datepicker.js" />
+    <Content Include="Templates\CoolWater\Label.htm" />
+    <Content Include="Templates\CoolWater\LabelDate.htm" />
+    <Content Include="Templates\CoolWater\LabelPassword.htm" />
+    <Content Include="Templates\CoolWater\Layout.htm" />
+    <Content Include="Templates\CoolWater\Message.htm" />
+    <Content Include="Templates\CoolWater\ModelList.htm" />
+    <Content Include="Templates\CoolWater\ModelListCount.htm" />
+    <Content Include="Templates\CoolWater\ModelSingle.htm" />
+    <Content Include="Templates\CoolWater\Search.htm" />
+    <Content Include="Templates\CoolWater\TextArea.htm" />
+    <Content Include="Templates\CoolWater\TextBox.htm" />
+    <Content Include="Templates\CoolWater\TextBoxDate.htm" />
+    <Content Include="Templates\CoolWater\TextBoxFile.htm" />
+    <Content Include="Templates\CoolWater\TextBoxPassword.htm" />
+    <Content Include="Templates\CoolWater\TextBoxValueType.htm" />
+    <Content Include="Templates\CoolWater\View.htm" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Northwind.cs">
+      <DependentUpon>Northwind.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Northwind.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Northwind.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Northwind.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Northwind.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\dotObjects.Core.csproj">
+      <Project>{5547CCE9-0D18-4614-8E57-D9CFFD2F87F2}</Project>
+      <Name>dotObjects.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\dotObjects.Security.csproj">
+      <Project>{AC24C757-86DA-42E7-9FDD-E416BC88B142}</Project>
+      <Name>dotObjects.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web\dotObjects.Web.csproj">
+      <Project>{C7EBF780-38E8-49CA-9FE0-8A9FE08993B2}</Project>
+      <Name>dotObjects.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Northwind.dbml.layout">
+      <DependentUpon>Northwind.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50706</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Northwind</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
